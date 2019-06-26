@@ -12,6 +12,14 @@ body {
   box-sizing: border-box;
 }
 
+.tit {
+  display: inline-block;
+}
+
+#sign-in-btn {
+  background-color: #ddd
+}
+
 /* sets the style of my body tag*/
 body {
   margin: 0;
@@ -1361,7 +1369,7 @@ textarea:focus,
 
 #spinbtn,
 #spinbtn2 {
-  display: none;
+  display: inline-block;
 }
 
 @keyframes spin {

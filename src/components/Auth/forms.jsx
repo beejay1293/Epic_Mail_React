@@ -3,10 +3,13 @@ import Register from './registerForm';
 import SignIn from './loginForm';
 
 class Forms extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { register: true };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { register: true };
+  // }
+  state = {
+    register: true
+  };
 
   changeForm() {
     this.setState(prev => ({ register: !prev.register }));
@@ -26,7 +29,7 @@ class Forms extends Component {
         <div className="signup">
           <p>
             { register ? 'Already have an account?' : "Don't have an account?"}
-            <em role="button" tabIndex={0} className="signinbtn actionbtn" onClick={() => this.changeForm()} onKeyPress={() => this.changeForm()}>
+            <em className="signinbtn actionbtn" onClick={() => this.changeForm()} >
               {word}
             </em>
           </p>

@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const Input = ({
-  type, placeholder, name, id,
+  type, placeholder, name, id, onChange, ref
 }) => (
   <div>
     <input
@@ -10,7 +10,7 @@ const Input = ({
       placeholder={placeholder}
       name={name}
       id={id}
-      required
+      onChange={onChange}
     />
     <small className="error" />
   </div>
@@ -21,6 +21,7 @@ Input.propTypes = {
   name: propTypes.string.isRequired,
   id: propTypes.string.isRequired,
   placeholder: propTypes.string.isRequired,
+  onChange: propTypes.func,
 };
 
 export default Input;

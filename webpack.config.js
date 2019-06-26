@@ -1,8 +1,15 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+
+const hotReloader = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: {
+    app: ['babel-polyfill',
+      'react-hot-loader/patch', './src/index.jsx',
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -11,10 +18,21 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     historyApiFallback: true,
+    hot: true
   },
   module: {
     rules: [
-      { test: /\.(jsx)$/, use: 'babel-loader' },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-transform-arrow-functions'],
+          },
+        },
+      },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -32,12 +50,15 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
-  mode: 'development',
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './dist//index.html',
-    }),
-  ],
+  // plugins: [
+  //   new HtmlWebPackPlugin({
+  //     options: {
+  //       inject: false
+  //     },
+  //     template: './dist/index.html',
+  //   }),
+  //       hotReloader,
+  // ],
 };
