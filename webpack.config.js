@@ -1,29 +1,64 @@
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
+const hotReloader = new webpack.HotModuleReplacementPlugin();
+
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    app: ['babel-polyfill',
+      'react-hot-loader/patch', './src/index.jsx',
+    ],
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
+  },
+  devServer: {
+    contentBase: './dist',
+    historyApiFallback: true,
+    hot: true
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-transform-arrow-functions'],
+          },
+        },
+      },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: '[name].[ext]',
+              outputPath: './assets/img/',
+            },
+          },
+        ],
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
-  output: {
-    path: `${__dirname}/dist`,
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-  },
+  // plugins: [
+  //   new HtmlWebPackPlugin({
+  //     options: {
+  //       inject: false
+  //     },
+  //     template: './dist/index.html',
+  //   }),
+  //       hotReloader,
+  // ],
 };
