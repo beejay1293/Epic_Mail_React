@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Top content should render correctly topcontent 1`] = `
+<div
+  className="top-content"
+>
+  <input
+    className="first"
+    type="checkbox"
+  />
+  <i
+    className="fas fa-redo-alt reload"
+    id="reload"
+  />
+</div>
+`;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Messages should render correctly all messages 1`] = `
+<ul
+  className="inbox__body"
+>
+  <SingleMessage
+    key="1"
+    messages="i need a message"
+    name="draft"
+    style="inbox__message"
+    time="12th"
+  />
+  <SingleMessage
+    key="2"
+    messages="i need a message"
+    name="draft"
+    style="draft__message"
+    time="12th"
+  />
+</ul>
+`;

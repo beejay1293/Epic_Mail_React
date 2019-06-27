@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login form should render correctly the login form 1`] = `
+<ContextProvider
+  value={null}
+>
+  <withRouter(Login)
+    auth={[Function]}
+    errors={Object {}}
+    isAuthenticated={false}
+    isLoading={false}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    user={Object {}}
+  />
+</ContextProvider>
+`;

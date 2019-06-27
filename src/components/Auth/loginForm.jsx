@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { auth } from '../../actions';
 import { withRouter } from 'react-router-dom';
-// import Input from './input';
 
 class Login extends Component {
 

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should render correctly the register form 1`] = `
+<div
+  className="login"
+>
+  <h3
+    className="sub_header"
+  />
+  <h3
+    className="sub_header"
+  >
+    Create an EPIC Mail Account
+  </h3>
+  <Connect(withRouter(Register)) />
+  <div
+    className="signup"
+  >
+    <p>
+      Already have an account?
+      <em
+        className="signinbtn actionbtn"
+        onClick={[Function]}
+      >
+        Sign in.
+      </em>
+    </p>
+  </div>
+</div>
+`;

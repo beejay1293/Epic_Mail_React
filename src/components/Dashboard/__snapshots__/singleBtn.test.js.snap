@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Single button should render correctly in single button with props 1`] = `
+<li
+  className="inbox__btn active"
+>
+  <i
+    className="fas fa-inbox"
+  />
+  Inbox
+</li>
+`;

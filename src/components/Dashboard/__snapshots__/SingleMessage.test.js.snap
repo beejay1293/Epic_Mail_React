@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Single Message should render correctly a Single Message component 1`] = `
+<li
+  className="inbox__message"
+>
+  <h1
+    className="name"
+  >
+    draft
+  </h1>
+  <h1
+    className="message"
+  >
+    i need a message
+  </h1>
+  <h1
+    className="time"
+  >
+    12th
+  </h1>
+  <div
+    className="delete__icon"
+  >
+    <i
+      className="fas fa-trash-alt"
+    />
+  </div>
+</li>
+`;
