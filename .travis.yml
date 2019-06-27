@@ -6,7 +6,7 @@ cache:
   directories:
     - "node_modules"
 before_install:
-  - "npm install"
+  - "rm -f package-lock.json && npm install"
 
 script:
   - "npm run test -- -u"
