@@ -45,8 +45,8 @@ export const auth = (type, user, history) => async (dispatch) => {
   try {
     dispatch(authenticating());
     const response = await authAPI(type, user);
-    console.log('....', response);
-
+    // console.log('....', response.data.data.token);
+    localStorage.setItem('jwtToken', response.data.data.token)
     const dispatchType = type === 'signin' ? signinSuccess : signupSuccess;
     history.push('/dashboard');
 

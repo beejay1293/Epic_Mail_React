@@ -4,7 +4,7 @@ import { auth } from '../../actions';
 import { withRouter } from 'react-router-dom';
 // import Input from './input';
 
-class Register extends Component {
+class Login extends Component {
 
   state = {
     email: '',
@@ -28,6 +28,7 @@ class Register extends Component {
     e.preventDefault();
     const { name, value } = e.target
     this.setState({email: value})
+    
   }
   handlePassword = (e) => {
     e.preventDefault();
@@ -82,4 +83,4 @@ const mapStateToProps = state => ({
   errors: state.auth.errors,
 });
 
-export default connect(mapStateToProps, { auth })(withRouter(Register));
+export default connect(mapStateToProps, { auth })(withRouter(Login));
