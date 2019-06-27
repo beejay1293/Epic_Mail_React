@@ -4,6 +4,7 @@ EPIC Mail is an Application that helps people exchange messages/information over
 
 [![Build Status](https://travis-ci.org/beejay1293/Epic_Mail_React.svg?branch=develop)](https://travis-ci.org/beejay1293/Epic_Mail_React)
 [![Coverage Status](https://coveralls.io/repos/github/beejay1293/Epic_Mail_React/badge.svg?branch=develop)](https://coveralls.io/github/beejay1293/Epic_Mail_React?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e2c379f742e6c59e5940/maintainability)](https://codeclimate.com/github/beejay1293/Epic_Mail_React/maintainability)
 
 
 ## Features

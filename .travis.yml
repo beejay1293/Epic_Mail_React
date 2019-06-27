@@ -10,3 +10,6 @@ before_install:
 
 script:
   - "npm run test -- -u"
+
+  after_success:
+  - npm run coveralls
