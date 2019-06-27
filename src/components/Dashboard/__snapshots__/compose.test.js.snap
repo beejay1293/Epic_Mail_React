@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Compose message button should render correctly the compose message button 1`] = `
+<div
+  className="compose__message_wrapper"
+>
+  <div
+    className="compose__message_btn"
+  >
+    COMPOSE
+    <div
+      className="plus__icon"
+    >
+      <i
+        className="fas fa-plus"
+      />
+    </div>
+  </div>
+</div>
+`;

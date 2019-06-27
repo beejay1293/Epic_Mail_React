@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar buttons should render correctly the sidebar buttons 1`] = `
+<div
+  className="nav2"
+>
+  <ul>
+    <SingleBtn
+      font="fas fa-inbox"
+      key="1"
+      name="Inbox"
+      styles="inbox__btn active"
+    />
+    <SingleBtn
+      font="fas fa-paper-plane"
+      key="2"
+      name="sent"
+      styles="sent__btn"
+    />
+    <SingleBtn
+      font="fas fa-comment-alt"
+      key="3"
+      name="draft"
+      styles="draft__btn"
+    />
+    <SingleBtn
+      font="fas fa-envelope"
+      key="4"
+      name="starred"
+      styles="starred__btn"
+    />
+    <hr />
+    <SingleBtn
+      font="fas fa-address-book"
+      name="Contacts(5)"
+      styles="contacts__btn"
+    />
+    <hr />
+    <div
+      className="grp"
+    >
+      <li
+        className="groups"
+      >
+        <i
+          className="fas fa-angle-up  up"
+        />
+        <h4
+          className="group__wrapper"
+        >
+          Groups
+        </h4>
+      </li>
+      <ul
+        className="all__groups"
+      />
+      <li
+        className="create__group"
+      >
+        <i
+          className="fas fa-plus"
+        />
+        Create Group
+      </li>
+      <hr />
+    </div>
+  </ul>
+</div>
+`;

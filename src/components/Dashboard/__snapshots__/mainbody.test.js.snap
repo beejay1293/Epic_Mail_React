@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Body should render correctly the main body 1`] = `
+<div
+  className="main__body"
+>
+  <TopContent />
+  <MessageBody />
+</div>
+`;

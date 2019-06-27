@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard should render correctly in "debug" mode 1`] = `
+<section
+  className="main"
+>
+  <Header />
+  <SideBar />
+  <MainBody />
+</section>
+`;

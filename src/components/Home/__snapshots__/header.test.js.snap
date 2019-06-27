@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage Header should render correctly the Homepage header 1`] = `
+<header
+  className="header__container_index"
+>
+  <div
+    className="logo"
+  >
+    <h1
+      className="header"
+    >
+      <div
+        className="epic__mails"
+      >
+        <span>
+           
+          <i
+            className="fas fa-envelope"
+          />
+          <em>
+            E
+          </em>
+        </span>
+        PIC
+        <b
+          className="mail"
+        >
+          Mail
+        </b>
+      </div>
+    </h1>
+  </div>
+  <div>
+    <div
+      className="get_started"
+    >
+      <h5
+        className="user"
+      >
+        <a
+          href="/login"
+        >
+          GET STARTED
+        </a>
+      </h5>
+    </div>
+  </div>
+  <section
+    className="main_landing"
+  >
+    <div
+      className="pic"
+    >
+      <h1>
+        <img
+          alt=""
+          height="120px;"
+          src="\\"email8.png\\""
+          width="120px"
+        />
+      </h1>
+      <h1>
+        WELCOME TO
+         
+        <span
+          className="epic"
+        >
+          EPIC MAIL
+        </span>
+      </h1>
+      <p
+        className="note"
+      >
+        Stay organized With EPIC Mail, you can enjoy the richness of email communication delivered extremely fast when compared to traditional post. Emails can be sent 24 hours a day, 365 days a year.
+      </p>
+      <p
+        className="note"
+      >
+         
+        <Link
+          to="/login"
+        >
+          Login
+        </Link>
+         
+      </p>
+    </div>
+  </section>
+</header>
+`;

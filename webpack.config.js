@@ -50,7 +50,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.png'],
   },
   // plugins: [
   //   new HtmlWebPackPlugin({
