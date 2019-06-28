@@ -6,6 +6,6 @@ exports[`Single button should render correctly the sidebar 1`] = `
 >
   <Compose />
   <hr />
-  <Btn />
+  <Connect(Btn) />
 </div>
 `;

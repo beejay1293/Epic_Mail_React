@@ -6,6 +6,7 @@ const SingleMessage = ({
 }) => (
 
   <li className={style}>
+    <input type="checkbox" />
     <h1 className="name">{name}</h1>
     <h1 className="message">{messages}</h1>
     <h1 className="time">{time}</h1>

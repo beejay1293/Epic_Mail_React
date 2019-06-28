@@ -1,40 +1,30 @@
 import React, { Component } from 'react';
 import SingleMessage from './SingleMessage';
+import { messages } from '../../actions'
+import { connect } from 'react-redux';
 
 class MessageBody extends Component {
-  constructor() {
-    super();
-    this.state = {
-      message: [
-        {
-          styles: 'inbox__message',
-          name: 'draft',
-          message: 'i need a message',
-          time: '12th',
-          id: 1,
-        },
-        {
-          styles: 'draft__message',
-          name: 'draft',
-          message: 'i need a message',
-          time: '12th',
-          id: 2,
-        },
-
-      ],
-    };
-  }
 
   render() {
-    const { message } = this.state;
+    let messages;
+    const styles = 'inbox__message';
+    if(this.props.Dashboardstate === 'Inbox'){
+      messages = this.props.inbox
+      console.log('this................', messages);
+      
+    }else if(this.props.Dashboardstate === 'sent'){
+      messages = this.props.sent
+    } else if(this.props.Dashboardstate === 'unread'){
+      messages = this.props.unread
+    }
     return (
       <ul className="inbox__body">
-        {message.map(msg => (
+        {messages.map(msg => (
           <SingleMessage
-            style={msg.styles}
-            name={msg.name}
+            style={styles}
+            name= {msg.sender || msg.receiver}
             messages={msg.message}
-            time={msg.time}
+            time={msg.createdon}
             key={msg.id}
           />
         ))}
@@ -44,5 +34,14 @@ class MessageBody extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  isAuthenticated: state.messages.isAuthenticated,
+  inbox: state.messages.inbox,
+  sent: state.messages.sent,
+  unread: state.messages.unread,
+  Dashboardstate: state.messages.dashboardstate,
+  errors: state.messages.errors
+})
 
-export default MessageBody;
+export default connect(mapStateToProps, { messages })(MessageBody);
+

@@ -4,6 +4,9 @@ exports[`Single Message should render correctly a Single Message component 1`] =
 <li
   className="inbox__message"
 >
+  <input
+    type="checkbox"
+  />
   <h1
     className="name"
   >
