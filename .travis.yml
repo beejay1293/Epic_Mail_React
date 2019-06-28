@@ -5,9 +5,11 @@ node_js:
 cache:
   directories:
     - "node_modules"
+before_install:
+  - "rm -f package-lock.json && npm install"
 
 script:
   - "npm run test"
 
-  after_success:
+after_script:
   - npm run coveralls
