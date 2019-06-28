@@ -1,11 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dashboard should render correctly in "debug" mode 1`] = `
-<section
-  className="main"
+<ContextProvider
+  value={null}
 >
-  <Header />
-  <SideBar />
-  <MainBody />
-</section>
+  <Dashboard
+    Dashboardstate="Inbox"
+    errors={Object {}}
+    getMessages={[Function]}
+    inbox={Array []}
+    isAuthenticated={false}
+    sent={Array []}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    unread={Array []}
+  />
+</ContextProvider>
 `;

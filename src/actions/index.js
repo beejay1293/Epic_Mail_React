@@ -1,4 +1,5 @@
 import authAPI from '../utils/authAPI';
+import { messagesAPI } from '../utils/inboxAPI';
 import {
   UNAUTHENTICATED,
   AUTHENTICATING,
@@ -7,7 +8,12 @@ import {
   SIGNIN_ERROR,
   SIGNIN_SUCCESS,
   AUTHENTICATED,
+  INBOX_SUCCESS,
+  SENT_SUCCESS,
+  UNREAD_SUCCESS,
+  DASHBOARD_STATE
 } from '../constant/actionTypes';
+import dashboard from '../components/Dashboard/dashboard';
 
 export const authenticating = () => ({
   type: AUTHENTICATING,
@@ -41,6 +47,25 @@ export const signupError = error => ({
   payload: error,
 });
 
+export const inboxSuccess = messages => ({
+   type: INBOX_SUCCESS,
+   payload: messages
+})
+
+export const sentSuccess = messages=> ({
+  type: SENT_SUCCESS,
+  payload: messages
+})
+
+export const unreadSuccess = messages => ({
+  type: UNREAD_SUCCESS,
+  payload: messages
+})
+
+export const dashboardState = state => ({
+  type: DASHBOARD_STATE,
+  payload: state
+})
 export const auth = (type, user, history) => async (dispatch) => {
   try {
     dispatch(authenticating());
@@ -59,3 +84,34 @@ export const auth = (type, user, history) => async (dispatch) => {
     dispatch(dispatchType(errorResponse));
   }
 };
+
+export const messages = (type) => async (dispatch) => {
+  try {
+    dispatch(authenticating());
+    const response = await messagesAPI(type);
+
+    console.log(type, response);
+
+    let dispatchType;
+    if(type === ''){
+     dispatchType = inboxSuccess
+    }else if(type === 'sent'){
+      dispatchType = sentSuccess
+    }else if(type === 'unread'){
+      dispatchType = unreadSuccess
+    }
+
+    dispatch(dispatchType(response.data.data))
+    
+  } catch (err) {
+    const errorResponse = err.response;
+    console.log(err);
+    
+  }
+}
+export const changeDashboardState = (newDashState) => {
+  return dispatch => {
+    dispatch(dashboardState(newDashState))
+  }
+}
+

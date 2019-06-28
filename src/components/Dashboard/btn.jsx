@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import SingleBtn from './SingleBtn';
+import { changeDashboardState } from '../../actions/index'
+import { connect } from 'react-redux';
 
 class Btn extends PureComponent {
   constructor(props) {
@@ -27,14 +29,13 @@ class Btn extends PureComponent {
         {
           className: 'starred__btn',
           fonts: 'fas fa-envelope',
-          name: 'starred',
+          name: 'unread',
           id: 4,
         },
       ],
     };
   }
-
-
+ 
   render() {
     const { bts } = this.state;
     return (
@@ -46,14 +47,15 @@ class Btn extends PureComponent {
               font={btn.fonts}
               name={btn.name}
               key={btn.id}
-            />
+              click={(type) => this.props.changeState(btn.name)}
+             />
           ))}
           <hr />
           <SingleBtn
             styles="contacts__btn"
             font="fas fa-address-book"
             name="Contacts(5)"
-          />
+           />
           <hr />
 
           <div className="grp">
@@ -77,4 +79,10 @@ Create Group
   }
 }
 
-export default Btn;
+const mapDispatchToProps = dispatch => {
+  return {
+    changeState: (type) => dispatch(changeDashboardState(type))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Btn);

@@ -1,22 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Messages should render correctly all messages 1`] = `
-<ul
-  className="inbox__body"
+<ContextProvider
+  value={null}
 >
-  <SingleMessage
-    key="1"
-    messages="i need a message"
-    name="draft"
-    style="inbox__message"
-    time="12th"
+  <MessageBody
+    Dashboardstate="Inbox"
+    errors={Object {}}
+    inbox={Array []}
+    isAuthenticated={false}
+    messages={[Function]}
+    sent={Array []}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    unread={Array []}
   />
-  <SingleMessage
-    key="2"
-    messages="i need a message"
-    name="draft"
-    style="draft__message"
-    time="12th"
-  />
-</ul>
+</ContextProvider>
 `;

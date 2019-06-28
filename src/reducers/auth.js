@@ -9,7 +9,7 @@ import {
 } from '../constant/actionTypes';
 
 const initialState = {
-  isAuthenticated: !!localStorage.getItem('jwToken'),
+  isAuthenticated: !!localStorage.getItem('jwtToken'),
   errors: {},
   user: {},
   loading: false,
