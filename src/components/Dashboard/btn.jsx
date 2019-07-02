@@ -9,25 +9,26 @@ class Btn extends PureComponent {
     this.state = {
       bts: [
         {
-          className: 'inbox__btn active',
+          className: '',
           fonts: 'fas fa-inbox',
           name: 'Inbox',
           id: 1,
+
         },
         {
-          className: 'sent__btn',
+          className: '',
           fonts: 'fas fa-paper-plane',
           name: 'sent',
           id: 2,
         },
         {
-          className: 'draft__btn',
+          className: '',
           fonts: 'fas fa-comment-alt',
           name: 'draft',
           id: 3,
         },
         {
-          className: 'starred__btn',
+          className: '',
           fonts: 'fas fa-envelope',
           name: 'unread',
           id: 4,
@@ -36,6 +37,8 @@ class Btn extends PureComponent {
     };
   }
  
+  
+ 
   render() {
     const { bts } = this.state;
     return (
@@ -43,7 +46,7 @@ class Btn extends PureComponent {
         <ul>
           {bts.map(btn => (
             <SingleBtn
-              styles={btn.className}
+              styles={this.props.Dashboardstate === btn.name ? 'active' : ''}
               font={btn.fonts}
               name={btn.name}
               key={btn.id}
@@ -79,10 +82,19 @@ Create Group
   }
 }
 
+const mapStateToProps = state => ({
+  isAuthenticated: state.messages.isAuthenticated,
+  inbox: state.messages.inbox,
+  sent: state.messages.sent,
+  unread: state.messages.unread,
+  Dashboardstate: state.messages.dashboardstate,
+  errors: state.messages.errors
+})
+
 const mapDispatchToProps = dispatch => {
   return {
     changeState: (type) => dispatch(changeDashboardState(type))
   }
 }
 
-export default connect(null, mapDispatchToProps)(Btn);
+export default connect(mapStateToProps, mapDispatchToProps)(Btn);

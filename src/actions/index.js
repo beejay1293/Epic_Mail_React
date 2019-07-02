@@ -1,5 +1,5 @@
 import authAPI from '../utils/authAPI';
-import { messagesAPI } from '../utils/inboxAPI';
+import { messagesAPI, getSpecificMessageApi } from '../utils/inboxAPI';
 import {
   UNAUTHENTICATED,
   AUTHENTICATING,
@@ -11,7 +11,8 @@ import {
   INBOX_SUCCESS,
   SENT_SUCCESS,
   UNREAD_SUCCESS,
-  DASHBOARD_STATE
+  DASHBOARD_STATE,
+  SPECIFIC_MESSAGE_SUCCESS,
 } from '../constant/actionTypes';
 import dashboard from '../components/Dashboard/dashboard';
 
@@ -52,7 +53,7 @@ export const inboxSuccess = messages => ({
    payload: messages
 })
 
-export const sentSuccess = messages=> ({
+export const sentSuccess = messages => ({
   type: SENT_SUCCESS,
   payload: messages
 })
@@ -64,7 +65,14 @@ export const unreadSuccess = messages => ({
 
 export const dashboardState = state => ({
   type: DASHBOARD_STATE,
-  payload: state
+  payload: state,
+  body: 'viewMessages'
+})
+
+export const getSPecificMessage = message => ({
+  type: SPECIFIC_MESSAGE_SUCCESS,
+  payload: message,
+  body: 'readEmail'
 })
 export const auth = (type, user, history) => async (dispatch) => {
   try {
@@ -78,7 +86,6 @@ export const auth = (type, user, history) => async (dispatch) => {
     dispatch(dispatchType(response.data));
   } catch (err) {
     const errorResponse = err.response;
-    console.log(err);
     const dispatchType = type === 'signin' ? signinError : signupError;
 
     dispatch(dispatchType(errorResponse));
@@ -105,13 +112,26 @@ export const messages = (type) => async (dispatch) => {
     
   } catch (err) {
     const errorResponse = err.response;
-    console.log(err);
+    console.log(errorResponse);
     
   }
 }
 export const changeDashboardState = (newDashState) => {
   return dispatch => {
     dispatch(dashboardState(newDashState))
+  }
+}
+
+export const fetchSpecificMessage = (messageId) => async(dispatch) => {
+  try {
+    dispatch(authenticating());
+
+    const response = await getSpecificMessageApi(messageId)
+   
+    dispatch(getSPecificMessage(response.data))
+    
+  } catch (error) {
+    
   }
 }
 

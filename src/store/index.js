@@ -9,7 +9,6 @@ const enhancers = [];
 const middlewares = [thunk, routerMiddleware(history)];
 
 if (process.env.NODE_ENV === 'development') {
-  middlewares.push(logger);
 
   if (typeof devToolsExtension === 'function') {
     enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

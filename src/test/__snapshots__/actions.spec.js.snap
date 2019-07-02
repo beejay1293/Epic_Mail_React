@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test async functions create signinsuccess action 1`] = `
+Array [
+  Object {
+    "payload": Object {},
+    "type": "SIGNIN_SUCCESS",
+  },
+]
+`;
+
+exports[`test async functions it tests login method 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+  Object {
+    "payload": undefined,
+    "type": "SIGNUP_ERROR",
+  },
+]
+`;
+
+exports[`test async functions tests authenticating action 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+]
+`;
+
+exports[`test async functions tests changeDashboardState action 1`] = `
+Array [
+  Object {
+    "body": "viewMessages",
+    "payload": "sent",
+    "type": "DASHBOARD_STATE",
+  },
+]
+`;
+
+exports[`test async functions tests get inbox messages endpoint 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+]
+`;
+
+exports[`test async functions tests get sent messages endpoint 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+]
+`;
+
+exports[`test async functions tests get unread nmessages endpoint 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+]
+`;
+
+exports[`test async functions tests getSpecific message action 1`] = `
+Array [
+  Object {
+    "body": "readEmail",
+    "payload": Object {},
+    "type": "SPECIFIC_MESSAGE_SUCCESS",
+  },
+]
+`;
+
+exports[`test async functions tests getSpecific message endpoint 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+]
+`;
+
+exports[`test async functions tests signup method 1`] = `
+Array [
+  Object {
+    "type": "AUTHENTICATING",
+  },
+  Object {
+    "payload": undefined,
+    "type": "SIGNUP_ERROR",
+  },
+]
+`;
