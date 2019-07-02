@@ -1,16 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar buttons should render correctly the sidebar buttons 1`] = `
-<Btn
-  changeState={[Function]}
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+<ContextProvider
+  value={null}
+>
+  <Btn
+    Dashboardstate="Inbox"
+    changeState={[Function]}
+    errors={Object {}}
+    inbox={Array []}
+    isAuthenticated={false}
+    sent={Array []}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
     }
-  }
-/>
+    unread={Array []}
+  />
+</ContextProvider>
 `;

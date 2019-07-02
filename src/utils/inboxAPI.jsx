@@ -17,5 +17,14 @@ export const messagesAPI = (type) => axios(`https://andela-epic-mail.herokuapp.c
   },
 });
 
+export const getSpecificMessageApi = (messageId) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/messages/${messageId}`, {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    'Content-type': 'application/json; charset=UTF-8',
+     token: userToken
+}
+})
+
 
 

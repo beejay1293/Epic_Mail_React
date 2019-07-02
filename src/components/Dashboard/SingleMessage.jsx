@@ -2,10 +2,10 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const SingleMessage = ({
-  style, name, messages, time,
+  style, name, messages, time, click, click2
 }) => (
 
-  <li className={style}>
+  <li className={style} onClick={click}>
     <input type="checkbox" />
     <h1 className="name">{name}</h1>
     <h1 className="message">{messages}</h1>

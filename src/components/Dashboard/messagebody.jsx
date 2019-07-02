@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import SingleMessage from './SingleMessage';
-import { messages } from '../../actions'
+import { messages, fetchSpecificMessage } from '../../actions'
 import { connect } from 'react-redux';
 
 class MessageBody extends Component {
 
   render() {
     let messages;
-    const styles = 'inbox__message';
+    const styles = 'msg';
     if(this.props.Dashboardstate === 'Inbox'){
       messages = this.props.inbox
-      console.log('this................', messages);
       
     }else if(this.props.Dashboardstate === 'sent'){
       messages = this.props.sent
@@ -26,6 +25,7 @@ class MessageBody extends Component {
             messages={msg.message}
             time={msg.createdon}
             key={msg.id}
+            click={(id) => this.props.getMessage(msg.id)}
           />
         ))}
 
@@ -33,6 +33,14 @@ class MessageBody extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    getMessage: (id) => dispatch(fetchSpecificMessage(id))
+  }
+}
+
+
+
 
 const mapStateToProps = state => ({
   isAuthenticated: state.messages.isAuthenticated,
@@ -40,8 +48,10 @@ const mapStateToProps = state => ({
   sent: state.messages.sent,
   unread: state.messages.unread,
   Dashboardstate: state.messages.dashboardstate,
-  errors: state.messages.errors
+  errors: state.messages.errors,
+  specificMessage: state.messages.specificMessage,
+  body: state.messages.body
 })
 
-export default connect(mapStateToProps, { messages })(MessageBody);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageBody);
 

@@ -1,5 +1,5 @@
 import authAPI from '../utils/authAPI';
-import { messagesAPI } from '../utils/inboxAPI';
+import { messagesAPI, getSpecificMessageApi } from '../utils/inboxAPI';
 import {
   UNAUTHENTICATED,
   AUTHENTICATING,
@@ -11,7 +11,8 @@ import {
   INBOX_SUCCESS,
   SENT_SUCCESS,
   UNREAD_SUCCESS,
-  DASHBOARD_STATE
+  DASHBOARD_STATE,
+  SPECIFIC_MESSAGE_SUCCESS,
 } from '../constant/actionTypes';
 import dashboard from '../components/Dashboard/dashboard';
 
@@ -52,7 +53,7 @@ export const inboxSuccess = messages => ({
    payload: messages
 })
 
-export const sentSuccess = messages=> ({
+export const sentSuccess = messages => ({
   type: SENT_SUCCESS,
   payload: messages
 })
@@ -64,7 +65,14 @@ export const unreadSuccess = messages => ({
 
 export const dashboardState = state => ({
   type: DASHBOARD_STATE,
-  payload: state
+  payload: state,
+  body: 'viewMessages'
+})
+
+export const getSPecificMessage = message => ({
+  type: SPECIFIC_MESSAGE_SUCCESS,
+  payload: message,
+  body: 'readEmail'
 })
 export const auth = (type, user, history) => async (dispatch) => {
   try {
@@ -112,6 +120,22 @@ export const messages = (type) => async (dispatch) => {
 export const changeDashboardState = (newDashState) => {
   return dispatch => {
     dispatch(dashboardState(newDashState))
+  }
+}
+
+export const fetchSpecificMessage = (messageId) => async(dispatch) => {
+  try {
+    dispatch(authenticating());
+
+    const response = await getSpecificMessageApi(messageId)
+
+    console.log(response.data);
+    
+
+    dispatch(getSPecificMessage(response.data))
+    
+  } catch (error) {
+    
   }
 }
 
