@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main Body should render correctly the main body 1`] = `
+exports[`view a message should render correctly if user wants to view a message 1`] = `
 <ContextProvider
   value={null}
 >
-  <MainBody
+  <viewSpecificMessage
     Dashboardstate="Inbox"
     body="viewMessages"
     dispatch={[Function]}
     errors={Object {}}
     inbox={Array []}
     isAuthenticated={false}
+    receiver={Object {}}
+    sender={Object {}}
     sent={Array []}
     specificMessage={Object {}}
     store={

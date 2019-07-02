@@ -23,7 +23,6 @@ body {
 /* sets the style of my body tag*/
 body {
   margin: 0;
-
   font-size: 100%;
 
   font-size: 14px;
@@ -1010,7 +1009,7 @@ textarea:focus,
 
 .read__email {
   border: 1px solid rgb(238, 238, 238);
-  display: none;
+  display: block;
   padding: 1px 25px;
   margin-top: 80px;
 }
@@ -1053,6 +1052,7 @@ textarea:focus,
 
 .from {
   display: inline-block;
+  padding-right: 4px;
 }
 
 .plus__icon {
@@ -1480,4 +1480,29 @@ textarea:focus,
 
 .group__member_inline {
   display: inline-block;
+}
+
+.msg {
+  display: inline-block;
+  padding: 18px;
+  border-radius: 4px;
+  background: #fff;
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  font-size: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-left: 1px solid #888;
+
+  border-bottom: 1px solid #888;
+  border-top: 0px;
+}
+
+.msg:hover {
+  opacity: 0.9;
+  background: #f4f4f4;
+  cursor: pointer;
+  border-bottom: 2px solid #888;
+  padding: 17px;
 }
