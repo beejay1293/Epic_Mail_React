@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test message reducers should test DASHBOARD STATE 1`] = `
+Object {
+  "body": undefined,
+  "dashboardstate": undefined,
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "receiver": Object {},
+  "sender": Object {},
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
+
+exports[`test message reducers should test INBOX_SUCCESS 1`] = `
+Object {
+  "body": "viewMessages",
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": undefined,
+  "isAuthenticated": false,
+  "receiver": Object {},
+  "sender": Object {},
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
+
+exports[`test message reducers should test SENT_SUCCESS 1`] = `
+Object {
+  "body": "viewMessages",
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "receiver": Object {},
+  "sender": Object {},
+  "sent": undefined,
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
+
+exports[`test message reducers should test UNAUTHENTICATE 1`] = `
+Object {
+  "body": "viewMessages",
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "receiver": Object {},
+  "sender": Object {},
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
+
+exports[`test message reducers should test UNREAD_SUCCESS 1`] = `
+Object {
+  "body": "viewMessages",
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "receiver": Object {},
+  "sender": Object {},
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": undefined,
+}
+`;

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test auth reducers should handle AUTHENTICATIN 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": false,
+  "loading": true,
+  "user": Object {},
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle AUTHETICATED 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": true,
+  "loading": false,
+  "user": undefined,
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle SIGNIN_ERROR 1`] = `
+Object {
+  "errors": undefined,
+  "isAuthenticated": false,
+  "loading": false,
+  "user": Object {},
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle SIGNIN_SUCCESS 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": true,
+  "loading": false,
+  "user": undefined,
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle SIGNUP_SUCCESS 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": true,
+  "loading": false,
+  "user": undefined,
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle SINGUP_ERROR 1`] = `
+Object {
+  "errors": undefined,
+  "isAuthenticated": false,
+  "loading": false,
+  "user": Object {},
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should handle UNAUTHENTICATED 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": false,
+  "loading": false,
+  "user": Object {},
+  "working": false,
+}
+`;
+
+exports[`test auth reducers should return the initial state 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": false,
+  "loading": false,
+  "user": Object {},
+  "working": false,
+}
+`;

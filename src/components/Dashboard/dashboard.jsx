@@ -5,13 +5,12 @@ import Main from './mainbody';
 import { messages } from '../../actions';
 import { connect } from 'react-redux';
 
-class Dashboard extends PureComponent {
+export class Dashboard extends PureComponent {
 
   
 
   componentWillMount(){
-  //  this.props.messages('')
-    this.props.getMessages('');
+   this.props.getMessages('');
    this.props.getMessages('sent')
    this.props.getMessages('unread')
    
@@ -36,10 +35,8 @@ const mapStateToProps = state => ({
   Dashboardstate: state.messages.dashboardstate,
   errors: state.messages.errors
 })
-const mapDispatchToProps = dispatch => {
-  return {
-    getMessages: (type) => dispatch(messages(type))
-  }
+const mapDispatchToProps =  {
+   getMessages: (type) => messages(type)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { auth } from '../../actions';
 import { withRouter } from 'react-router-dom';
 
-class Login extends Component {
+export class Login extends Component {
 
   state = {
     email: '',
@@ -21,18 +21,15 @@ class Login extends Component {
     this.props.auth('login', userDetails, this.props.history);
   }
 
-  handleEmail = (e) => {
+  handleInput(e) {
     e.preventDefault();
     const { name, value } = e.target
-    this.setState({email: value})
+    console.log(name);
+    
+    this.setState({[name]: value})
     
   }
-  handlePassword = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target
-    this.setState({password: value});
-  }
- 
+
   render() {
     return (
       <form action="dashboard.html" className="login-form" onSubmit={e => this.handleSubmit(e)} noValidate>
@@ -44,14 +41,14 @@ class Login extends Component {
             placeholder="Enter Email"
             name="email"
             id="sign-in-email"
-            onChange= {this.handleEmail}
+            onChange= {e => this.handleInput(e)}
           />
           <input
             type="password"
             placeholder="Enter Password"
             name="password"
             id="sign-in-password"
-            onChange= {this.handlePassword}
+            onChange= {e => this.handleInput(e)}
           />
 
           <hr />

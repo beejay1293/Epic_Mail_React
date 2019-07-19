@@ -24,3 +24,13 @@ exports[`Dashboard should render correctly in "debug" mode 1`] = `
   />
 </ContextProvider>
 `;
+
+exports[`test method test should test method 1`] = `
+<section
+  className="main"
+>
+  <Header />
+  <SideBar />
+  <Connect(MainBody) />
+</section>
+`;

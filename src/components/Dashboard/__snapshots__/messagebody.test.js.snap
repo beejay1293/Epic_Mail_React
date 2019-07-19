@@ -26,3 +26,21 @@ exports[`Messages should render correctly all messages 1`] = `
   />
 </ContextProvider>
 `;
+
+exports[`test messageBody should test messageBody 1`] = `
+<ul
+  className="inbox__body"
+/>
+`;
+
+exports[`test messageBody should test messageBody 2`] = `
+<ul
+  className="inbox__body"
+/>
+`;
+
+exports[`test messageBody should test messageBody 3`] = `
+<ul
+  className="inbox__body"
+/>
+`;

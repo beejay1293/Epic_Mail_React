@@ -1,26 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar buttons should render correctly the sidebar buttons 1`] = `
-<ContextProvider
-  value={null}
+<div
+  className="nav2"
 >
-  <Btn
-    Dashboardstate="Inbox"
-    changeState={[Function]}
-    errors={Object {}}
-    inbox={Array []}
-    isAuthenticated={false}
-    sent={Array []}
-    store={
-      Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-        Symbol(observable): [Function],
-      }
-    }
-    unread={Array []}
-  />
-</ContextProvider>
+  <ul>
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-inbox"
+      key="1"
+      name="Inbox"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-paper-plane"
+      key="2"
+      name="sent"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-comment-alt"
+      key="3"
+      name="draft"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-envelope"
+      key="4"
+      name="unread"
+      styles=""
+    />
+    <hr />
+    <SingleBtn
+      font="fas fa-address-book"
+      name="Contacts(5)"
+      styles="contacts__btn"
+    />
+    <hr />
+    <div
+      className="grp"
+    >
+      <li
+        className="groups"
+      >
+        <i
+          className="fas fa-angle-up  up"
+        />
+        <h4
+          className="group__wrapper"
+        >
+          Groups
+        </h4>
+      </li>
+      <ul
+        className="all__groups"
+      />
+      <li
+        className="create__group"
+      >
+        <i
+          className="fas fa-plus"
+        />
+        Create Group
+      </li>
+      <hr />
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`test btn should test a method 1`] = `
+<div
+  className="nav2"
+>
+  <ul>
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-inbox"
+      key="1"
+      name="Inbox"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-paper-plane"
+      key="2"
+      name="sent"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-comment-alt"
+      key="3"
+      name="draft"
+      styles=""
+    />
+    <SingleBtn
+      click={[Function]}
+      font="fas fa-envelope"
+      key="4"
+      name="unread"
+      styles=""
+    />
+    <hr />
+    <SingleBtn
+      font="fas fa-address-book"
+      name="Contacts(5)"
+      styles="contacts__btn"
+    />
+    <hr />
+    <div
+      className="grp"
+    >
+      <li
+        className="groups"
+      >
+        <i
+          className="fas fa-angle-up  up"
+        />
+        <h4
+          className="group__wrapper"
+        >
+          Groups
+        </h4>
+      </li>
+      <ul
+        className="all__groups"
+      />
+      <li
+        className="create__group"
+      >
+        <i
+          className="fas fa-plus"
+        />
+        Create Group
+      </li>
+      <hr />
+    </div>
+  </ul>
+</div>
 `;
