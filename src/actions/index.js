@@ -86,7 +86,6 @@ export const auth = (type, user, history) => async (dispatch) => {
     dispatch(dispatchType(response.data));
   } catch (err) {
     const errorResponse = err.response;
-    console.log(err);
     const dispatchType = type === 'signin' ? signinError : signupError;
 
     dispatch(dispatchType(errorResponse));
@@ -113,7 +112,7 @@ export const messages = (type) => async (dispatch) => {
     
   } catch (err) {
     const errorResponse = err.response;
-    console.log(err);
+    console.log(errorResponse);
     
   }
 }
@@ -128,10 +127,7 @@ export const fetchSpecificMessage = (messageId) => async(dispatch) => {
     dispatch(authenticating());
 
     const response = await getSpecificMessageApi(messageId)
-
-    console.log(response.data);
-    
-
+   
     dispatch(getSPecificMessage(response.data))
     
   } catch (error) {

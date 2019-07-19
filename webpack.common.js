@@ -6,9 +6,7 @@ const hotReloader = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
   entry: {
-    app: ['babel-polyfill',
-      'react-hot-loader/patch', './src/index.jsx',
-    ],
+    app: './src/index.jsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

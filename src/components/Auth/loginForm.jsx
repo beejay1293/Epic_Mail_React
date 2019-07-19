@@ -11,8 +11,6 @@ class Login extends Component {
   }
 
 
-  // const { auth } = this.props
-
   handleSubmit(e) {
     e.preventDefault();
 
@@ -34,14 +32,7 @@ class Login extends Component {
     const { name, value } = e.target
     this.setState({password: value});
   }
-  componentDidUpdate(prevProps, prevState) {
-    console.log('previous props',prevProps.isAuthenticated);
-    console.log('previous state', prevState);
-    if(prevState.isAuthenticated === 'true' ){
-     
-      
-    }
-  }
+ 
   render() {
     return (
       <form action="dashboard.html" className="login-form" onSubmit={e => this.handleSubmit(e)} noValidate>
@@ -68,7 +59,7 @@ class Login extends Component {
             <div className="tit" >{this.props.isLoading ? 'Loading...' : 'Login'}</div>
             {this.props.isLoading ? <i className="fas fa-spinner btnspinner" id="spinbtn"> </i> : ''}
           </button>
-          <em className="forgot__password"><a href>Forgot Password? </a></em>
+          <em className="forgot__password"><a href='/'>Forgot Password? </a></em>
         </div>
       </form>
     );

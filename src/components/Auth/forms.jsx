@@ -3,10 +3,6 @@ import Register from './registerForm';
 import SignIn from './loginForm';
 
 class Forms extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { register: true };
-  // }
   state = {
     register: true
   };
