@@ -2,12 +2,16 @@ import React from 'react';
 import Compose from './compose';
 import Btn from './btn';
 
-const SideBar = () => (
-  <div className="nav">
-    <Compose />
+const SideBar = ({click, navname}) => (
+  <div className={navname}>
+    <Compose click={click}/>
     <hr />
     <Btn />
   </div>
 );
+
+SideBar.defaultProps = {
+  navname: 'nav',
+};
 
 export default SideBar;

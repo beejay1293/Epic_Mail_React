@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import { connect } from 'react-redux'
 
 
@@ -11,7 +12,7 @@ class viewSpecificMessage extends Component {
              <h1 className="subject">
             {this.props.specificMessage.subject}
           </h1> 
-          <p className="time__created">{this.props.specificMessage.createdon}</p></div>  
+          <p className="time__created">{moment(this.props.specificMessage.createdon).format('Do MMMM')}</p></div>  
           <div className="users">
 
             <h1 className="from"> {this.props.sender.firstname} {this.props.sender.lastname} </h1>

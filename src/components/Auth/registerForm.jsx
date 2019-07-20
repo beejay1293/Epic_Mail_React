@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { auth } from '../../actions/';
 
 
-class Register extends Component {
+export class Register extends Component {
 
   state = {
     firstname: '',

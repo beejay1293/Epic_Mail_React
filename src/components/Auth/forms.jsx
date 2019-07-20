@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Register from './registerForm';
 import SignIn from './loginForm';
 
-class Forms extends Component {
+ class Forms extends Component {
   state = {
     register: true
   };

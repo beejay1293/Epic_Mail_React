@@ -22,3 +22,77 @@ exports[`Register form should render correctly the Register form 1`] = `
   />
 </ContextProvider>
 `;
+
+exports[`test register methods should test wrapper 1`] = `
+<form
+  action="dashboard.html"
+  className="login-form"
+  method="POST"
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <div
+    className="login_container"
+  >
+    <hr />
+    <input
+      id="firstname"
+      name="firstname"
+      onChange={[Function]}
+      placeholder="Firstname"
+      type="text"
+    />
+    <input
+      id="lastname"
+      name="lastname"
+      onChange={[Function]}
+      placeholder="lastname"
+      type="text"
+    />
+    <input
+      id="email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type="email"
+    />
+    <input
+      id="number"
+      name="number"
+      onChange={[Function]}
+      placeholder="Phone"
+      type="tel"
+    />
+    <input
+      id="password"
+      name="password"
+      onChange={[Function]}
+      placeholder="Enter Password"
+      type="password"
+    />
+    <div
+      className="feedback_container2"
+    />
+    <input
+      id="password2"
+      name="psw2"
+      onChange={[Function]}
+      placeholder="Comfirm password"
+      type="password"
+    />
+    <hr />
+    <button
+      className="registerbtn"
+      disabled={false}
+      id=""
+      type="submit"
+    >
+      <div
+        className="tit"
+      >
+        sign up
+      </div>
+    </button>
+  </div>
+</form>
+`;

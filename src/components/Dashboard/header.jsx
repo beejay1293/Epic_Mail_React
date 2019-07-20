@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Header = () => (
+const Header = ({sideBar, dashstate, icon}) => (
   <header className="header__container">
     <div className="logo">
       <h1 className="header">
-        <div className="bars">
-          <i className="fas fa-bars" />
-          <h6 className="nav_name">inbox</h6>
+        <div className="bars" onClick={sideBar}>
+          {icon}
+          <h6 className="nav_name">{dashstate}</h6>
         </div>
         <div className="epic__mail">
 
@@ -33,8 +32,7 @@ Mobolaji
           </h5>
           <div className="dropdown-content">
 
-            <a href="/" className="reset__password">reset password</a>
-            <Link to="/">Logout</Link>
+            <a href="/login" className="reset__password">logout</a>
           </div>
 
         </i>

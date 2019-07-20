@@ -13,7 +13,7 @@ export const messagesAPI = (type) => axios(`https://andela-epic-mail.herokuapp.c
   headers: {
     accept: 'application/json',
     'Content-type': 'application/json; charset=UTF-8',
-     token: userToken
+     token: localStorage.getItem('jwtToken')
   },
 });
 
@@ -22,9 +22,29 @@ export const getSpecificMessageApi = (messageId) => axios(`https://andela-epic-m
   headers: {
     accept: 'application/json',
     'Content-type': 'application/json; charset=UTF-8',
-     token: userToken
+     token: localStorage.getItem('jwtToken')
 }
 })
+
+export const sendMessage = (messageDetail) => axios('https://andela-epic-mail.herokuapp.com/api/v2/messages', {
+  method: 'POST',
+  data: messageDetail,
+  headers: {
+    accept: 'application/json',
+    'Content-type': 'application/json; charset=UTF-8',
+    token: localStorage.getItem('jwtToken')
+  },
+});
+
+export const deleteMessage = (id) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/messages/${id}`, {
+  method: 'DELETE',
+  headers: {
+    accept: 'application/json',
+    'Content-type': 'application/json; charset=UTF-8',
+    token: userToken = localStorage.getItem('jwtToken')
+  }
+})
+
 
 
 

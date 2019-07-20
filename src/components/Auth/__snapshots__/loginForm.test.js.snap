@@ -22,3 +22,57 @@ exports[`Login form should render correctly the login form 1`] = `
   />
 </ContextProvider>
 `;
+
+exports[`test login methods should test wrapper 1`] = `
+<form
+  action="dashboard.html"
+  className="login-form"
+  noValidate={true}
+  onSubmit={[Function]}
+>
+  <div
+    className="login_container"
+  >
+    <div
+      className="feedback-message-login"
+    />
+    <hr />
+    <input
+      id="sign-in-email"
+      name="email"
+      onChange={[Function]}
+      placeholder="Enter Email"
+      type="email"
+    />
+    <input
+      id="sign-in-password"
+      name="password"
+      onChange={[Function]}
+      placeholder="Enter Password"
+      type="password"
+    />
+    <hr />
+    <button
+      className="loginbtn"
+      disabled={false}
+      id=""
+      type="submit"
+    >
+      <div
+        className="tit"
+      >
+        Login
+      </div>
+    </button>
+    <em
+      className="forgot__password"
+    >
+      <a
+        href="/"
+      >
+        Forgot Password? 
+      </a>
+    </em>
+  </div>
+</form>
+`;

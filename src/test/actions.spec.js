@@ -5,6 +5,7 @@ import nock from 'nock';
 import {
   auth,
   messages,
+  deleteSpecificMessage,
   fetchSpecificMessage,
   changeDashboardState,
   signinSuccess,
@@ -16,7 +17,9 @@ import {
   unreadSuccess,
   dashboardState,
   getSPecificMessage,
-  authenticating
+  authenticating,
+  sendMessageAction,
+  messageSuccess
 } from '../actions/index';
 const middlewares = [ thunk ];
 const mockStore = configureMockStore(middlewares);
@@ -43,6 +46,16 @@ describe('test async functions', () => {
 
     return store.dispatch(auth(userDetails)).then(() => {
       expect(store.getActions()).toMatchSnapshot()
+    })
+  })
+
+  it('tests send message endpoint', () => {
+    nock('https://andela-epic-mail.herokuapp.com').post('/api/v2/messages').reply(201, {})
+
+    const messageDetail = { reciever: 'akere@epic.com', subject: 'hey', message: 'bro'}
+
+    return store.dispatch(sendMessageAction(messageDetail)).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
     })
   })
 
@@ -99,6 +112,14 @@ describe('test async functions', () => {
       expect(store.getActions()).toMatchSnapshot();
     })
   })
+
+  it('tests delete specific message endpoint', () => {
+    nock('https://andela-epic-mail.herokuapp.com').get('/api/v2/messages/2').reply(200, {})
+
+    return store.dispatch(deleteSpecificMessage('2')).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+    })
+  })
   
   it('tests authenticating action', () => {
     store.dispatch(authenticating());
@@ -115,7 +136,10 @@ describe('test async functions', () => {
     expect(store.getActions()).toMatchSnapshot();
   })
 
-
+  it('test messageSuccess action', () => {
+    store.dispatch(messageSuccess('message sent successfully'));
+    expect(store.getActions()).toMatchSnapshot();
+  })
 
 
 })
