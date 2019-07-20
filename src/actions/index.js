@@ -1,5 +1,5 @@
 import authAPI from '../utils/authAPI';
-import { messagesAPI, getSpecificMessageApi } from '../utils/inboxAPI';
+import { messagesAPI, getSpecificMessageApi, sendMessage } from '../utils/inboxAPI';
 import {
   UNAUTHENTICATED,
   AUTHENTICATING,
@@ -13,6 +13,10 @@ import {
   UNREAD_SUCCESS,
   DASHBOARD_STATE,
   SPECIFIC_MESSAGE_SUCCESS,
+  LOADING,
+  SENDING,
+  MESSAGE_SUCCESS,
+  MESSAGE_ERROR
 } from '../constant/actionTypes';
 import dashboard from '../components/Dashboard/dashboard';
 
@@ -74,6 +78,22 @@ export const getSPecificMessage = message => ({
   payload: message,
   body: 'readEmail'
 })
+
+export const loading = () => ({
+  type: LOADING,
+})
+export const sending = () => ({
+  type: SENDING,
+})
+
+export const messageSuccess = () => ({
+  type: MESSAGE_SUCCESS
+})
+
+export const messageError = (errorMessage) => ({
+  type: MESSAGE_ERROR,
+  payload: errorMessage
+})
 export const auth = (type, user, history) => async (dispatch) => {
   try {
     dispatch(authenticating());
@@ -94,10 +114,9 @@ export const auth = (type, user, history) => async (dispatch) => {
 
 export const messages = (type) => async (dispatch) => {
   try {
-    dispatch(authenticating());
+    dispatch(loading());
     const response = await messagesAPI(type);
 
-    console.log(type, response);
 
     let dispatchType;
     if(type === ''){
@@ -124,13 +143,28 @@ export const changeDashboardState = (newDashState) => {
 
 export const fetchSpecificMessage = (messageId) => async(dispatch) => {
   try {
-    dispatch(authenticating());
+    dispatch(loading());
 
     const response = await getSpecificMessageApi(messageId)
    
     dispatch(getSPecificMessage(response.data))
     
   } catch (error) {
+    
+  }
+}
+
+export const sendMessageAction = (messageDetail) => async (dispatch) => {
+  try {
+    dispatch(sending())
+    const sent = await sendMessage(messageDetail)
+
+    console.log(sent);
+    dispatch(messageSuccess())
+    
+  } catch (error) {
+    console.log(error.response);
+    dispatch(messageError(error.response))
     
   }
 }

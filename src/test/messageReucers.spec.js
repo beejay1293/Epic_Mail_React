@@ -4,7 +4,11 @@ import {
   SENT_SUCCESS,
   UNREAD_SUCCESS,
   DASHBOARD_STATE,
-  SPECIFIC_MESSAGE_SUCCESS
+  SPECIFIC_MESSAGE_SUCCESS,
+  LOADING,
+  SENDING,
+  MESSAGE_SUCCESS,
+  MESSAGE_ERROR
 } from '../constant/actionTypes';
 import messageReducer, { initialState } from '../reducers/messages';
 
@@ -39,10 +43,19 @@ describe('test message reducers', () => {
       type: DASHBOARD_STATE
     })).toMatchSnapshot();
   })
-
-  // it('should test SPECIFIC_MESSAGE_SUCCESS', () => {
-  //   expect(messageReducer(initialState, {
-  //     type: SPECIFIC_MESSAGE_SUCCESS
-  //   })).toMatchSnapshot();
-  // })
+  it('should test LOADING', () => {
+    expect(messageReducer(initialState, {
+      type: LOADING
+    })).toMatchSnapshot();
+  })
+  it('should test SENDING', () => {
+    expect(messageReducer(initialState, {
+      type: SENDING
+    })).toMatchSnapshot();
+  })
+  it('should test MESSAGE_SUCCESS', () => {
+    expect(messageReducer(initialState, {
+      type: MESSAGE_SUCCESS
+    })).toMatchSnapshot();
+  })
 })

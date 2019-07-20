@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment'
 import SingleMessage from './SingleMessage';
 import { messages, fetchSpecificMessage } from '../../actions'
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ export class MessageBody extends Component {
             style={styles}
             name= {msg.sender || msg.receiver}
             messages={msg.message}
-            time={msg.createdon}
+            time={moment(msg.createdon).format('Do MMMM')}
             key={msg.id}
             click={(id) => this.props.getMessage(msg.id)}
           />

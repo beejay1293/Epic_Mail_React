@@ -21,6 +21,14 @@ Array [
 ]
 `;
 
+exports[`test async functions test messageSuccess action 1`] = `
+Array [
+  Object {
+    "type": "MESSAGE_SUCCESS",
+  },
+]
+`;
+
 exports[`test async functions tests authenticating action 1`] = `
 Array [
   Object {
@@ -42,7 +50,7 @@ Array [
 exports[`test async functions tests get inbox messages endpoint 1`] = `
 Array [
   Object {
-    "type": "AUTHENTICATING",
+    "type": "LOADING",
   },
 ]
 `;
@@ -50,7 +58,7 @@ Array [
 exports[`test async functions tests get sent messages endpoint 1`] = `
 Array [
   Object {
-    "type": "AUTHENTICATING",
+    "type": "LOADING",
   },
 ]
 `;
@@ -58,7 +66,7 @@ Array [
 exports[`test async functions tests get unread nmessages endpoint 1`] = `
 Array [
   Object {
-    "type": "AUTHENTICATING",
+    "type": "LOADING",
   },
 ]
 `;
@@ -76,7 +84,19 @@ Array [
 exports[`test async functions tests getSpecific message endpoint 1`] = `
 Array [
   Object {
-    "type": "AUTHENTICATING",
+    "type": "LOADING",
+  },
+]
+`;
+
+exports[`test async functions tests send message endpoint 1`] = `
+Array [
+  Object {
+    "type": "SENDING",
+  },
+  Object {
+    "payload": undefined,
+    "type": "MESSAGE_ERROR",
   },
 ]
 `;

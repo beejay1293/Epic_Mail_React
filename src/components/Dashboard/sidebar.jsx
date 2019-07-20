@@ -2,9 +2,9 @@ import React from 'react';
 import Compose from './compose';
 import Btn from './btn';
 
-const SideBar = () => (
+const SideBar = ({click}) => (
   <div className="nav">
-    <Compose />
+    <Compose click={click}/>
     <hr />
     <Btn />
   </div>
