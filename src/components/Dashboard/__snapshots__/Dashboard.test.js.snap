@@ -10,6 +10,11 @@ exports[`Dashboard should render correctly in "debug" mode 1`] = `
     getMessages={[Function]}
     inbox={Array []}
     isAuthenticated={false}
+    loading={false}
+    messageError=""
+    messageSuccess=""
+    sendMessage={[Function]}
+    sending={false}
     sent={Array []}
     store={
       Object {
@@ -23,4 +28,367 @@ exports[`Dashboard should render correctly in "debug" mode 1`] = `
     unread={Array []}
   />
 </ContextProvider>
+`;
+
+exports[`test method test should test method 1`] = `
+<section
+  className="main"
+>
+  <Header />
+  <SideBar
+    click={[Function]}
+  />
+  <Connect(MainBody) />
+  <div
+    className="close"
+  >
+    <form
+      action=""
+      className="message_form"
+    >
+      <div
+        className="message_container"
+      >
+        <div
+          className="message_wrapper"
+        >
+          <ul>
+            <li
+              className="message_wrapper_header"
+            >
+              <h1
+                className="message_header"
+              >
+                New Message
+              </h1>
+            </li>
+            <li
+              className="message_wrapper_clear"
+            >
+              <div
+                className="clear__overlay"
+                onClick={[Function]}
+              >
+                x
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="error"
+        >
+           
+           
+        </div>
+        <hr />
+        <div
+          className="group__checkbox"
+        >
+           
+          <h3
+            className="send__to_group"
+          >
+            send to group
+          </h3>
+           
+          <p
+            className="grp__check"
+          >
+            <input
+              className="checkbox__grp"
+              type="checkbox"
+            />
+          </p>
+           
+        </div>
+        <select
+          className=""
+          id="group__list"
+        />
+        <input
+          className="messageTo"
+          name="to"
+          onChange={[Function]}
+          placeholder="To"
+          type="text"
+          value=""
+        />
+        <input
+          className="messageSubject"
+          name="subject"
+          onChange={[Function]}
+          placeholder="Subject"
+          type="text"
+          value=""
+        />
+        <textarea
+          className="messageContent"
+          cols="30"
+          id=""
+          name="message"
+          onChange={[Function]}
+          placeholder="Enter Your Message"
+          rows="5"
+          value=""
+        />
+        <hr />
+        <button
+          className="send_message__btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          send
+        </button>
+        <button
+          className="draft_message__btn"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+`;
+
+exports[`test method test should test second input 1`] = `
+<section
+  className="main"
+>
+  <Header />
+  <SideBar
+    click={[Function]}
+  />
+  <Connect(MainBody) />
+  <div
+    className="close"
+  >
+    <form
+      action=""
+      className="message_form"
+    >
+      <div
+        className="message_container"
+      >
+        <div
+          className="message_wrapper"
+        >
+          <ul>
+            <li
+              className="message_wrapper_header"
+            >
+              <h1
+                className="message_header"
+              >
+                New Message
+              </h1>
+            </li>
+            <li
+              className="message_wrapper_clear"
+            >
+              <div
+                className="clear__overlay"
+                onClick={[Function]}
+              >
+                x
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="error"
+        >
+           
+           
+        </div>
+        <hr />
+        <div
+          className="group__checkbox"
+        >
+           
+          <h3
+            className="send__to_group"
+          >
+            send to group
+          </h3>
+           
+          <p
+            className="grp__check"
+          >
+            <input
+              className="checkbox__grp"
+              type="checkbox"
+            />
+          </p>
+           
+        </div>
+        <select
+          className=""
+          id="group__list"
+        />
+        <input
+          className="messageTo"
+          name="to"
+          onChange={[Function]}
+          placeholder="To"
+          type="text"
+          value=""
+        />
+        <input
+          className="messageSubject"
+          name="subject"
+          onChange={[Function]}
+          placeholder="Subject"
+          type="text"
+          value=""
+        />
+        <textarea
+          className="messageContent"
+          cols="30"
+          id=""
+          name="message"
+          onChange={[Function]}
+          placeholder="Enter Your Message"
+          rows="5"
+          value=""
+        />
+        <hr />
+        <button
+          className="send_message__btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          send
+        </button>
+        <button
+          className="draft_message__btn"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+`;
+
+exports[`test method test should test third input 1`] = `
+<section
+  className="main"
+>
+  <Header />
+  <SideBar
+    click={[Function]}
+  />
+  <Connect(MainBody) />
+  <div
+    className="close"
+  >
+    <form
+      action=""
+      className="message_form"
+    >
+      <div
+        className="message_container"
+      >
+        <div
+          className="message_wrapper"
+        >
+          <ul>
+            <li
+              className="message_wrapper_header"
+            >
+              <h1
+                className="message_header"
+              >
+                New Message
+              </h1>
+            </li>
+            <li
+              className="message_wrapper_clear"
+            >
+              <div
+                className="clear__overlay"
+                onClick={[Function]}
+              >
+                x
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="error"
+        >
+           
+           
+        </div>
+        <hr />
+        <div
+          className="group__checkbox"
+        >
+           
+          <h3
+            className="send__to_group"
+          >
+            send to group
+          </h3>
+           
+          <p
+            className="grp__check"
+          >
+            <input
+              className="checkbox__grp"
+              type="checkbox"
+            />
+          </p>
+           
+        </div>
+        <select
+          className=""
+          id="group__list"
+        />
+        <input
+          className="messageTo"
+          name="to"
+          onChange={[Function]}
+          placeholder="To"
+          type="text"
+          value=""
+        />
+        <input
+          className="messageSubject"
+          name="subject"
+          onChange={[Function]}
+          placeholder="Subject"
+          type="text"
+          value=""
+        />
+        <textarea
+          className="messageContent"
+          cols="30"
+          id=""
+          name="message"
+          onChange={[Function]}
+          placeholder="Enter Your Message"
+          rows="5"
+          value=""
+        />
+        <hr />
+        <button
+          className="send_message__btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          send
+        </button>
+        <button
+          className="draft_message__btn"
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
 `;

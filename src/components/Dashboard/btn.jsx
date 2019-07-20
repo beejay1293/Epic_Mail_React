@@ -3,10 +3,9 @@ import SingleBtn from './SingleBtn';
 import { changeDashboardState } from '../../actions/index'
 import { connect } from 'react-redux';
 
-class Btn extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
+export class Btn extends PureComponent {
+
+    state = {
       bts: [
         {
           className: '',
@@ -35,7 +34,7 @@ class Btn extends PureComponent {
         },
       ],
     };
-  }
+ 
  
   
  
@@ -91,10 +90,8 @@ const mapStateToProps = state => ({
   errors: state.messages.errors
 })
 
-const mapDispatchToProps = dispatch => {
-  return {
-    changeState: (type) => dispatch(changeDashboardState(type))
-  }
+const mapDispatchToProps = {
+    changeState: (type) => changeDashboardState(type),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Btn);

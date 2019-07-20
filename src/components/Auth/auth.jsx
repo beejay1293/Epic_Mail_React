@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Forms from './forms';
+import { connect } from 'react-redux';
+import { auth } from '../../actions';
 
-class Form extends PureComponent {
+export class Form extends PureComponent {
   render() {
+    if(this.props.isAuthenticated) {
+      return <Redirect to='/dashboard'/>;
+    }
+
+    
     return (
       <div className="container">
         <div className="login__wrapper">
@@ -23,4 +30,8 @@ class Form extends PureComponent {
     );
   }
 }
-export default Form;
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+})
+export default connect(mapStateToProps)(Form);

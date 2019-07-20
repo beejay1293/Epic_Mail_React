@@ -1,36 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Auth should render correctly in "debug" mode 1`] = `
-<div
-  className="container"
+<ContextProvider
+  value={null}
 >
-  <div
-    className="login__wrapper"
-  >
-    <h1
-      className="header"
-    >
-      <Link
-        className="link"
-        to="/"
-      >
-        <span>
-          <em>
-            E
-          </em>
-        </span>
-        PIC
-        <b
-          className="mails"
-        >
-          Mail
-        </b>
-      </Link>
-    </h1>
-    <Forms />
-  </div>
-  <div
-    className="wrapper"
+  <Form
+    dispatch={[Function]}
+    isAuthenticated={false}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
   />
-</div>
+</ContextProvider>
+`;
+
+exports[`test auth should test form  1`] = `
+<Redirect
+  to="/dashboard"
+/>
 `;
