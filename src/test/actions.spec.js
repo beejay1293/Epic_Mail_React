@@ -5,6 +5,7 @@ import nock from 'nock';
 import {
   auth,
   messages,
+  deleteSpecificMessage,
   fetchSpecificMessage,
   changeDashboardState,
   signinSuccess,
@@ -108,6 +109,14 @@ describe('test async functions', () => {
     nock('https://andela-epic-mail.herokuapp.com').get('/api/v2/messages/2').reply(200, {})
 
     return store.dispatch(fetchSpecificMessage('2')).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+    })
+  })
+
+  it('tests delete specific message endpoint', () => {
+    nock('https://andela-epic-mail.herokuapp.com').get('/api/v2/messages/2').reply(200, {})
+
+    return store.dispatch(deleteSpecificMessage('2')).then(() => {
       expect(store.getActions()).toMatchSnapshot();
     })
   })

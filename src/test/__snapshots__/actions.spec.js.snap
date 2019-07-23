@@ -47,6 +47,14 @@ Array [
 ]
 `;
 
+exports[`test async functions tests delete specific message endpoint 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+]
+`;
+
 exports[`test async functions tests get inbox messages endpoint 1`] = `
 Array [
   Object {
@@ -86,6 +94,11 @@ Array [
   Object {
     "type": "LOADING",
   },
+  Object {
+    "body": "readEmail",
+    "payload": Object {},
+    "type": "SPECIFIC_MESSAGE_SUCCESS",
+  },
 ]
 `;
 
@@ -95,8 +108,7 @@ Array [
     "type": "SENDING",
   },
   Object {
-    "payload": undefined,
-    "type": "MESSAGE_ERROR",
+    "type": "MESSAGE_SUCCESS",
   },
 ]
 `;

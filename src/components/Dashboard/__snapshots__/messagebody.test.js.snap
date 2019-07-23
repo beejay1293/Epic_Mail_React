@@ -7,10 +7,12 @@ exports[`Messages should render correctly all messages 1`] = `
   <MessageBody
     Dashboardstate="Inbox"
     body="viewMessages"
+    delMessage={[Function]}
     errors={Object {}}
     getMessage={[Function]}
     inbox={Array []}
     isAuthenticated={false}
+    message={[Function]}
     sent={Array []}
     specificMessage={Object {}}
     store={
@@ -30,17 +32,53 @@ exports[`Messages should render correctly all messages 1`] = `
 exports[`test messageBody should test messageBody 1`] = `
 <ul
   className="inbox__body"
-/>
+>
+  <li
+    className="empty"
+  >
+     
+    <h1>
+      No 
+      Inbox
+       messages 
+    </h1>
+     
+  </li>
+</ul>
 `;
 
 exports[`test messageBody should test messageBody 2`] = `
 <ul
   className="inbox__body"
-/>
+>
+  <li
+    className="empty"
+  >
+     
+    <h1>
+      No 
+      unread
+       messages 
+    </h1>
+     
+  </li>
+</ul>
 `;
 
 exports[`test messageBody should test messageBody 3`] = `
 <ul
   className="inbox__body"
-/>
+>
+  <li
+    className="empty"
+  >
+     
+    <h1>
+      No 
+      sent
+       messages 
+    </h1>
+     
+  </li>
+</ul>
 `;

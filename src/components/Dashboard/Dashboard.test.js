@@ -44,7 +44,7 @@ describe('test', () => {
 
   it('should test second input', () => {
     expect(wrapper).toMatchSnapshot();
-    const input = wrapper.find('input').at(2);
+    const input = wrapper.find('input').at(0);
     const e = { target: {}, preventDefault: () => {}};
     input.simulate('change', e);
 
@@ -72,6 +72,11 @@ describe('test', () => {
     const clear = wrapper.find('.clear__overlay');
     clear.simulate('click');
     expect(Dashboard.prototype.handleModal.called).toBe(true);
+  })
+
+  it('should test', () => {
+    wrapper.setState({sidebarstate: false})
+    expect(wrapper).toMatchSnapshot();
   })
 })
 

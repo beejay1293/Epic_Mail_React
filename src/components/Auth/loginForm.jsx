@@ -24,7 +24,6 @@ export class Login extends Component {
   handleInput(e) {
     e.preventDefault();
     const { name, value } = e.target
-    console.log(name);
     
     this.setState({[name]: value})
     

@@ -1,5 +1,5 @@
 import authAPI from '../utils/authAPI';
-import { messagesAPI, getSpecificMessageApi, sendMessage } from '../utils/inboxAPI';
+import { messagesAPI, getSpecificMessageApi, sendMessage, deleteMessage } from '../utils/inboxAPI';
 import {
   UNAUTHENTICATED,
   AUTHENTICATING,
@@ -154,18 +154,30 @@ export const fetchSpecificMessage = (messageId) => async(dispatch) => {
   }
 }
 
+export const deleteSpecificMessage = (id) => async(dispatch) => {
+  try {
+    dispatch(loading());
+
+    const response = await deleteMessage(id)
+
+    
+
+  } catch (error) {
+    console.log(error.response);
+    
+  }
+}
+
 export const sendMessageAction = (messageDetail) => async (dispatch) => {
   try {
     dispatch(sending())
     const sent = await sendMessage(messageDetail)
-
-    console.log(sent);
     dispatch(messageSuccess())
     
   } catch (error) {
-    console.log(error.response);
     dispatch(messageError(error.response))
     
   }
 }
+
 

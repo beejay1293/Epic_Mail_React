@@ -3,15 +3,15 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 const SingleMessage = ({
-  style, name, messages, time, click, click2
+  style, name, messages, time, click, click2, del
 }) => (
 
-  <li className={style} onClick={click}>
-    <input type="checkbox" className="checkbox"/>
-    <h1 className="name">{name}</h1>
-    <h1 className="message">{messages}</h1>
-    <h1 className="time">{time}</h1>
-    <div className="delete__icon">
+  <li className={style} >
+    <input type="checkbox" className="checkbox" />
+    <h1 className="name" onClick={click}>{name}</h1>
+    <h1 className="message" onClick={click}>{messages}</h1>
+    <h1 className="time" onClick={click}>{time}</h1>
+    <div className="delete__icon" onClick={del}>
       <i className="fas fa-trash-alt" />
     </div>
   </li>

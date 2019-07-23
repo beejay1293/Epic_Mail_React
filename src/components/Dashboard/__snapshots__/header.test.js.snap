@@ -13,14 +13,9 @@ exports[`Dashboard Header should render correctly the dashboard header 1`] = `
       <div
         className="bars"
       >
-        <i
-          className="fas fa-bars"
-        />
         <h6
           className="nav_name"
-        >
-          inbox
-        </h6>
+        />
       </div>
       <div
         className="epic__mail"
@@ -64,15 +59,10 @@ exports[`Dashboard Header should render correctly the dashboard header 1`] = `
         >
           <a
             className="reset__password"
-            href="/"
+            href="/login"
           >
-            reset password
+            logout
           </a>
-          <Link
-            to="/"
-          >
-            Logout
-          </Link>
         </div>
       </i>
     </ul>

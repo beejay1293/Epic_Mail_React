@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { css } from '@emotion/core';
 import { Redirect } from 'react-router-dom';
 import Modal from 'react-modal';
@@ -8,22 +8,20 @@ import SideBar from './sidebar';
 import Main from './mainbody';
 import { messages, sendMessageAction } from '../../actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-export class Dashboard extends PureComponent {
+export class Dashboard extends Component {
   state = {
     modal: 'close',
     to: '',
     subject:'',
     message: '',
     success: '',
-    error: ''
+    error: '',
+    sidebarstate: true
   };
 
-  componentDidMount() {
-    this.props.getMessages('');
-    this.props.getMessages('sent');
-    this.props.getMessages('unread');
-  }
+ 
 
   handleModal(type) {
     if(type === 'close'){
@@ -35,7 +33,8 @@ export class Dashboard extends PureComponent {
         error: ''
       })
     }
-    this.setState({modal: type})
+    this.setState({modal: type, sidebarstate: true})
+    
   }
 
   handleInput(e) {
@@ -48,15 +47,29 @@ export class Dashboard extends PureComponent {
     const { to, subject, message } = this.state
     const messageDetail = { reciever: to, subject, message}
     await this.props.sendMessage(messageDetail)
+    await this.props.getMessages('');
+    await this.props.getMessages('sent');
+    await this.props.getMessages('unread');
     this.setState({
       success: this.props.messageSuccess,
       error: this.props.messageError || 'receiver is invalid'
     })
   }
 
-  send(){
 
+  componentDidMount() {
+
+    this.props.getMessages('');
+    this.props.getMessages('sent');
+    this.props.getMessages('unread');
   }
+  sideToggle(e) {
+    e.preventDefault()
+   this.setState(prev => ({
+    sidebarstate: !prev.sidebarstate
+   }))
+  }
+
   render() {
     const override = css`
       display: block;
@@ -64,10 +77,14 @@ export class Dashboard extends PureComponent {
       border-color: red;
     `;
 
+    const stylediv = {
+      display: 'block'
+    }
+
     return (
       <section className="main">
-        <Header />
-        <SideBar click={(type) => this.handleModal('show')}/>
+        <Header sideBar={e => this.sideToggle(e)} dashstate={this.props.Dashboardstate} icon={this.state.sidebarstate ? <i className="fas fa-bars" /> : <i className="fas fa-times"></i>}/>
+        <SideBar navname={this.state.sidebarstate ? 'nav' : 'nav_show'} click={(type) => this.handleModal('show')} />
         <Main />
         {this.props.loading ? (
           <div className="spinner_overlay">
@@ -94,13 +111,6 @@ export class Dashboard extends PureComponent {
               <div className={this.state.success === 'message sent successfully' ? 'success' : 'error'} > {this.state.success || this.state.error} </div>
 
               <hr />
-              <div className="group__checkbox">
-                {' '}
-                <h3 className="send__to_group">send to group</h3>{' '}
-                <p className="grp__check">
-                  <input className="checkbox__grp" type="checkbox"  />
-                </p>{' '}
-              </div>
 
               <select className="" id="group__list" />
 
@@ -162,7 +172,8 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = {
   getMessages: type => messages(type),
-  sendMessage: details => sendMessageAction(details)
+  sendMessage: details => sendMessageAction(details),
+
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Dashboard))

@@ -6,9 +6,6 @@ import { auth } from '../../actions';
 
 export class Form extends PureComponent {
   render() {
-    if(this.props.isAuthenticated) {
-      return <Redirect to='/dashboard'/>;
-    }
 
     
     return (

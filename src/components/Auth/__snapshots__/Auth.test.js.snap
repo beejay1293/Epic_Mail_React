@@ -21,7 +21,36 @@ exports[`Auth should render correctly in "debug" mode 1`] = `
 `;
 
 exports[`test auth should test form  1`] = `
-<Redirect
-  to="/dashboard"
-/>
+<div
+  className="container"
+>
+  <div
+    className="login__wrapper"
+  >
+    <h1
+      className="header"
+    >
+      <Link
+        className="link"
+        to="/"
+      >
+        <span>
+          <em>
+            E
+          </em>
+        </span>
+        PIC
+        <b
+          className="mails"
+        >
+          Mail
+        </b>
+      </Link>
+    </h1>
+    <Forms />
+  </div>
+  <div
+    className="wrapper"
+  />
+</div>
 `;

@@ -17,14 +17,7 @@ EPIC Mail is an Application that helps people exchange messages/information over
 - Users can **fetch all sent emails**
 - Users can **fetch a specific email record**
 - Users can **delete a specific email record**
-- Users can **Create a new group**
-- Users can **get all groups records**
-- Admin/Moderator can **edit the name of a specific group**
-- Admin can **delete a specific group record**
-- Admin/Moderator can **add a new user to a group**
-- Admin/Moderator can **delete a user from a group**
-- Users can **send an email to a group**
-- Deliver messages via SMS
+
 
 ## Technologies
 
@@ -49,7 +42,7 @@ To run:
 git clone <https://github.com/beejay1293/Epic_Mail_React.git>
 cd EPIC_Mail_React
 npm install
-npm run start
+npm run start:dev
 ```
 
 ## Testing
@@ -77,23 +70,18 @@ npm test
 
 `- DELETE /api/v2/messages/<:message-id> Delete a specific email record.`
 
-`- POST /api/v2/groups Create a new group record.`
 
-`- GET /api/v2/groups Get all group records.`
-
-`- PATCH /api/v2/groups/<:groupId>/name Edit the name of a specific group record.`
-
-`- DELETE /api/v2/groups/<:groupId> Delete a specific group record.`
-
-`- POST /api/v2/groups/<:groupId>/users Add a new user to a group.`
-
-`- DELETE /api/v2/groups/<:groupId>/users/<:userId> Delete a specific user from a group.`
-
-`- POST /api/v2/groups/<:groupId>/messages send an email to a group.`
 
 ## Pivotal Tracker stories
 
 [https://www.pivotaltracker.com/n/projects/2355095](https://www.pivotaltracker.com/n/projects/2355095)
+
+
+## UI
+
+You can see a hosted version of the frontend hosted at
+
+[https://epic-mail-frontend.herokuapp.com/](https://epic-mail-frontend.herokuapp.com/)
 
 
 ## API
