@@ -7,6 +7,7 @@ EPIC Mail is an Application that helps people exchange messages/information over
 [![Maintainability](https://api.codeclimate.com/v1/badges/e2c379f742e6c59e5940/maintainability)](https://codeclimate.com/github/beejay1293/Epic_Mail_React/maintainability)
 
 
+
 ## Features
 
 - User can sign up
