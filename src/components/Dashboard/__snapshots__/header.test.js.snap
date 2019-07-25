@@ -49,7 +49,6 @@ exports[`Dashboard Header should render correctly the dashboard header 1`] = `
         <h5
           className="user"
         >
-          Mobolaji
           <i
             className="fas fa-caret-down"
           />

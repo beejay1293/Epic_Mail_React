@@ -58,4 +58,14 @@ describe('test message reducers', () => {
       type: MESSAGE_SUCCESS
     })).toMatchSnapshot();
   })
+  it('should test soecific message success', () => {
+    expect(messageReducer(initialState, {
+      type: SPECIFIC_MESSAGE_SUCCESS, payload: { data: {}, sender: '', receiver: ''}
+    })).toMatchSnapshot();
+  })
+  it('should test message error', () => {
+    expect(messageReducer(initialState, {
+      type: MESSAGE_ERROR, payload: { data: { error: 'dd'}}
+    })).toMatchSnapshot();
+  })
 })

@@ -14,6 +14,7 @@ const initialState = {
   user: {},
   loading: false,
   working: false,
+  name: '',
 };
 
 const authReducer = (state = initialState, action) => {
@@ -24,14 +25,22 @@ const authReducer = (state = initialState, action) => {
         loading: true,
       };
     case AUTHENTICATED:
-    case SIGNIN_SUCCESS:
-    case SIGNUP_SUCCESS:
       return {
         ...state,
         isAuthenticated: true,
         user: action.payload,
         errors: {},
         loading: false,
+      };
+    case SIGNUP_SUCCESS:
+    case SIGNIN_SUCCESS:
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload,
+        errors: {},
+        loading: false,
+        name: action.payload.data.lastname,
       };
     case UNAUTHENTICATED:
       return {

@@ -24,11 +24,11 @@ it('should handle AUTHETICATED', () => {
 })
 
 it('should handle SIGNUP_SUCCESS', () => {
-   expect(reducer(initialState, { type: SIGNUP_SUCCESS})).toMatchSnapshot();
+   expect(reducer(initialState, { type: SIGNUP_SUCCESS, payload: {data: {lastname: 'ji'}}})).toMatchSnapshot();
 })
 
 it('should handle SIGNIN_SUCCESS', () => {
-   expect(reducer(initialState, { type: SIGNIN_SUCCESS})).toMatchSnapshot();
+   expect(reducer(initialState, { type: SIGNIN_SUCCESS, payload: {data: {lastname: 'ji'}}})).toMatchSnapshot();
 })
 it('should handle SINGUP_ERROR', () => {
   expect(reducer(initialState, {

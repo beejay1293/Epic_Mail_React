@@ -5,6 +5,7 @@ Object {
   "errors": Object {},
   "isAuthenticated": false,
   "loading": true,
+  "name": "",
   "user": Object {},
   "working": false,
 }
@@ -15,6 +16,7 @@ Object {
   "errors": Object {},
   "isAuthenticated": true,
   "loading": false,
+  "name": "",
   "user": undefined,
   "working": false,
 }
@@ -25,6 +27,7 @@ Object {
   "errors": undefined,
   "isAuthenticated": false,
   "loading": false,
+  "name": "",
   "user": Object {},
   "working": false,
 }
@@ -35,7 +38,12 @@ Object {
   "errors": Object {},
   "isAuthenticated": true,
   "loading": false,
-  "user": undefined,
+  "name": "ji",
+  "user": Object {
+    "data": Object {
+      "lastname": "ji",
+    },
+  },
   "working": false,
 }
 `;
@@ -45,7 +53,12 @@ Object {
   "errors": Object {},
   "isAuthenticated": true,
   "loading": false,
-  "user": undefined,
+  "name": "ji",
+  "user": Object {
+    "data": Object {
+      "lastname": "ji",
+    },
+  },
   "working": false,
 }
 `;
@@ -55,6 +68,7 @@ Object {
   "errors": undefined,
   "isAuthenticated": false,
   "loading": false,
+  "name": "",
   "user": Object {},
   "working": false,
 }
@@ -65,6 +79,7 @@ Object {
   "errors": Object {},
   "isAuthenticated": false,
   "loading": false,
+  "name": "",
   "user": Object {},
   "working": false,
 }
@@ -75,6 +90,7 @@ Object {
   "errors": Object {},
   "isAuthenticated": false,
   "loading": false,
+  "name": "",
   "user": Object {},
   "working": false,
 }

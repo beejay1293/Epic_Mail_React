@@ -13,6 +13,7 @@ exports[`Dashboard should render correctly in "debug" mode 1`] = `
     loading={false}
     messageError=""
     messageSuccess=""
+    name=""
     sendMessage={[Function]}
     sending={false}
     sent={Array []}
