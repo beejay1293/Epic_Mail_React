@@ -62,6 +62,7 @@ export class Dashboard extends Component {
     this.props.getMessages('');
     this.props.getMessages('sent');
     this.props.getMessages('unread');
+    
   }
   sideToggle(e) {
     e.preventDefault()
@@ -83,7 +84,7 @@ export class Dashboard extends Component {
 
     return (
       <section className="main">
-        <Header sideBar={e => this.sideToggle(e)} dashstate={this.props.Dashboardstate} icon={this.state.sidebarstate ? <i className="fas fa-bars" /> : <i className="fas fa-times"></i>}/>
+        <Header sideBar={e => this.sideToggle(e)}  name={this.props.name} dashstate={this.props.Dashboardstate} icon={this.state.sidebarstate ? <i className="fas fa-bars" /> : <i className="fas fa-times"></i>}/>
         <SideBar navname={this.state.sidebarstate ? 'nav' : 'nav_show'} click={(type) => this.handleModal('show')} />
         <Main />
         {this.props.loading ? (
@@ -168,7 +169,8 @@ const mapStateToProps = state => ({
   loading: state.messages.isLoading,
   sending: state.messages.sending,
   messageSuccess: state.messages.messageSuccess,
-  messageError: state.messages.messageError
+  messageError: state.messages.messageError,
+  name: state.auth.name
 });
 const mapDispatchToProps = {
   getMessages: type => messages(type),

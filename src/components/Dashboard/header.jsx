@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({sideBar, dashstate, icon}) => (
+const Header = ({sideBar, dashstate, icon, name}) => (
   <header className="header__container">
     <div className="logo">
       <h1 className="header">
@@ -27,7 +27,7 @@ PIC
         <i className="far fa-user">
 
           <h5 className="user">
-Mobolaji
+{name}
             <i className="fas fa-caret-down" />
           </h5>
           <div className="dropdown-content">

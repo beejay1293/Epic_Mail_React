@@ -151,3 +151,41 @@ Object {
   "unread": undefined,
 }
 `;
+
+exports[`test message reducers should test message error 1`] = `
+Object {
+  "body": "viewMessages",
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "isLoading": false,
+  "messageError": "dd",
+  "messageSuccess": "",
+  "receiver": Object {},
+  "sender": Object {},
+  "sending": false,
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
+
+exports[`test message reducers should test soecific message success 1`] = `
+Object {
+  "body": undefined,
+  "dashboardstate": "Inbox",
+  "errors": Object {},
+  "inbox": Array [],
+  "isAuthenticated": false,
+  "isLoading": false,
+  "messageError": "",
+  "messageSuccess": "",
+  "receiver": "",
+  "sender": "",
+  "sending": false,
+  "sent": Array [],
+  "specificMessage": Object {},
+  "unread": Array [],
+}
+`;
