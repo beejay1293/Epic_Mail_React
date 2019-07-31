@@ -7,8 +7,10 @@ if (localStorage.getItem('jwtToken')) {
   
 }
 
+const baseUrl = 'https://andela-epic-mail.herokuapp.com'
 
-export const messagesAPI = (type) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/messages/${type}`, {
+
+export const messagesAPI = (type) => axios(`${baseUrl}/api/v2/messages/${type}`, {
   method: 'GET',
   headers: {
     accept: 'application/json',
@@ -17,7 +19,7 @@ export const messagesAPI = (type) => axios(`https://andela-epic-mail.herokuapp.c
   },
 });
 
-export const getSpecificMessageApi = (messageId) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/messages/${messageId}`, {
+export const getSpecificMessageApi = (messageId) => axios(`${baseUrl}/api/v2/messages/${messageId}`, {
   method: 'GET',
   headers: {
     accept: 'application/json',
@@ -26,7 +28,7 @@ export const getSpecificMessageApi = (messageId) => axios(`https://andela-epic-m
 }
 })
 
-export const sendMessage = (messageDetail) => axios('https://andela-epic-mail.herokuapp.com/api/v2/messages', {
+export const sendMessage = (messageDetail) => axios(`${baseUrl}/api/v2/messages`, {
   method: 'POST',
   data: messageDetail,
   headers: {
@@ -36,7 +38,7 @@ export const sendMessage = (messageDetail) => axios('https://andela-epic-mail.he
   },
 });
 
-export const deleteMessage = (id) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/messages/${id}`, {
+export const deleteMessage = (id) => axios(`${baseUrl}/api/v2/messages/${id}`, {
   method: 'DELETE',
   headers: {
     accept: 'application/json',
