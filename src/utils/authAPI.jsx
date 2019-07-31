@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const authAPI = (type, user) => axios(`https://andela-epic-mail.herokuapp.com/api/v2/auth/${type}`, {
+const baseUrl = 'https://andela-epic-mail.herokuapp.com'
+
+const authAPI = (type, user) => axios(`${baseUrl}/api/v2/auth/${type}`, {
   method: 'POST',
   data: user,
   headers: {
